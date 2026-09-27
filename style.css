@@ -6,71 +6,115 @@
 
 
 :root {
+
     --background: #f4f3ef;
+
     --card: #ffffff;
+
     --text: #171717;
+
     --muted: #777777;
+
     --border: #deddd8;
-    --accent: #e95b63;
-    --accent-light: #f9e4e5;
-    --dark: #242424;
+
+    --accent: #e85d65;
+
+    --accent-light: #f8e5e6;
+
+
+    --not-started-bg: #eeeeeb;
+    --not-started-text: #777777;
+
+    --progress-bg: #fff1c9;
+    --progress-text: #9a6b00;
+
+    --done-bg: #dff2e5;
+    --done-text: #2f7547;
+
 }
 
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background: var(--background);
+
     color: var(--text);
 
     min-height: 100vh;
+
 }
 
 
 .site-header {
-    max-width: 1100px;
+
+    max-width: 1150px;
 
     margin: 0 auto;
+
     padding: 70px 30px 50px;
 
     display: flex;
+
     justify-content: space-between;
-    gap: 50px;
+
+    gap: 60px;
+
+}
+
+
+.header-content {
+
+    max-width: 720px;
+
 }
 
 
 .eyebrow,
-.phase-label,
 .section-label,
+.phase-label,
 .topic-id,
-.overall-progress span,
-.phase-progress span {
+.progress-label,
+.phase-progress-label {
+
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
+
 }
 
 
-.eyebrow {
+.eyebrow,
+.phase-label {
+
     color: var(--accent);
+
 }
 
 
 h1 {
-    max-width: 700px;
 
     margin-top: 14px;
 
-    font-size: 48px;
-    line-height: 1.05;
+    font-size: 52px;
 
-    letter-spacing: -2px;
+    line-height: 1.03;
+
+    letter-spacing: -2.5px;
+
 }
 
 
 .subtitle {
+
     margin-top: 20px;
 
     max-width: 600px;
@@ -78,109 +122,255 @@ h1 {
     color: var(--muted);
 
     font-size: 17px;
+
     line-height: 1.6;
+
 }
 
 
 .overall-progress {
-    min-width: 220px;
+
+    min-width: 230px;
 
     padding-top: 8px;
+
 }
 
 
-.overall-progress span,
-.phase-progress span {
+.progress-label,
+.phase-progress-label {
+
     color: var(--muted);
+
 }
 
 
-.overall-progress strong,
-.phase-progress strong {
+.overall-progress strong {
+
     display: block;
 
     margin: 8px 0;
 
-    font-size: 30px;
+    font-size: 32px;
+
 }
 
 
 .progress-bar {
+
     width: 100%;
+
     height: 5px;
 
     background: #deddd8;
+
 }
 
 
-#overallProgressBar {
+.progress-fill {
+
     width: 0%;
+
     height: 100%;
 
     background: var(--accent);
 
-    transition: width 0.3s ease;
+    transition:
+        width 0.3s ease;
+
 }
+
 
 
 main {
-    max-width: 1100px;
+
+    max-width: 1150px;
 
     margin: 0 auto;
 
-    padding: 0 30px 80px;
+    padding: 0 30px 100px;
+
 }
 
 
+
+.dashboard-controls {
+
+    padding: 30px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.dashboard-controls h2 {
+
+    margin-top: 8px;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.section-label {
+
+    color: var(--muted);
+
+}
+
+
+
+.filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.filter-button {
+
+    padding: 9px 14px;
+
+    border:
+        1px solid var(--border);
+
+    background: white;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.filter-button:hover {
+
+    border-color: #aaa;
+
+}
+
+
+.filter-button.active {
+
+    background: var(--text);
+
+    border-color: var(--text);
+
+    color: white;
+
+}
+
+
+
 .phase {
-    border-top: 1px solid var(--border);
+
+    margin-top: 45px;
+
 }
 
 
 .phase-header {
-    padding: 35px 0;
+
+    padding-bottom: 25px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
+
+    gap: 30px;
+
 }
 
 
-.phase-label {
-    color: var(--accent);
-}
+.phase-title {
 
+    margin-top: 9px;
 
-h2 {
-    margin-top: 10px;
+    font-size: 34px;
 
-    font-size: 32px;
-    letter-spacing: -1px;
+    letter-spacing: -1.2px;
+
 }
 
 
 .phase-duration {
-    margin-top: 8px;
+
+    margin-top: 7px;
 
     color: var(--muted);
+
 }
 
 
 .phase-progress {
-    min-width: 130px;
+
+    min-width: 140px;
+
 }
 
 
+.phase-progress-value {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 25px;
+
+}
+
+
+
 .topic {
+
     margin-bottom: 12px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     background: var(--card);
+
+}
+
+
+.topic.hidden {
+
+    display: none;
+
 }
 
 
 .topic-header {
+
     width: 100%;
 
     padding: 22px 25px;
@@ -192,175 +382,333 @@ h2 {
     color: var(--text);
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
+    text-align: left;
 
     cursor: pointer;
 
-    text-align: left;
 }
 
 
 .topic-header:hover {
+
     background: #fafafa;
+
 }
 
 
 .topic-title {
+
     display: flex;
+
     align-items: center;
 
     gap: 20px;
+
 }
 
 
 .topic-id {
+
     color: var(--muted);
+
 }
 
 
-h3 {
+.topic-name {
+
     font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+.topic-description {
+
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
 }
 
 
 .status {
+
     display: inline-block;
 
-    margin-top: 8px;
+    margin-top: 9px;
 
-    padding: 5px 9px;
-
-    background: #eeeeeb;
-
-    color: #777;
+    padding: 6px 10px;
 
     font-size: 10px;
+
     font-weight: 700;
 
     letter-spacing: 1px;
+
+}
+
+
+.status-not-started {
+
+    background:
+        var(--not-started-bg);
+
+    color:
+        var(--not-started-text);
+
+}
+
+
+.status-in-progress {
+
+    background:
+        var(--progress-bg);
+
+    color:
+        var(--progress-text);
+
+}
+
+
+.status-done {
+
+    background:
+        var(--done-bg);
+
+    color:
+        var(--done-text);
+
 }
 
 
 .chevron {
+
     font-size: 22px;
 
-    transition: transform 0.25s ease;
+    transition:
+        transform 0.25s ease;
+
 }
 
 
 .topic.open .chevron {
-    transform: rotate(180deg);
+
+    transform:
+        rotate(180deg);
+
 }
 
 
 .topic-content {
+
     display: none;
 
     padding: 0 25px 30px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
+
 }
 
 
 .topic.open .topic-content {
+
     display: block;
+
 }
 
 
 .starting-point {
+
     margin: 25px 0;
 
     padding: 20px;
 
     background: #f5f4f0;
-}
 
-
-.section-label {
-    color: var(--muted);
 }
 
 
 .starting-point p {
-    margin-top: 10px;
+
+    margin-top: 9px;
 
     color: #555;
 
     line-height: 1.6;
+
 }
 
 
-.learning-section {
-    display: flex;
-    flex-direction: column;
+.tasks-title {
 
-    gap: 12px;
+    margin-bottom: 10px;
+
 }
 
 
 .task {
+
     display: flex;
+
     align-items: flex-start;
 
     gap: 12px;
 
-    padding: 12px 0;
+    padding: 13px 0;
 
-    border-bottom: 1px solid #eeeeeb;
+    border-bottom:
+        1px solid #eeeeeb;
 
     cursor: pointer;
 
     line-height: 1.5;
+
+}
+
+
+.task:last-child {
+
+    border-bottom: none;
+
 }
 
 
 .task input {
+
     width: 18px;
+
     height: 18px;
 
     margin-top: 2px;
 
-    accent-color: var(--accent);
+    accent-color:
+        var(--accent);
 
     cursor: pointer;
+
 }
 
 
-.task:has(input:checked) span {
+.task.completed span {
+
     color: #999;
 
-    text-decoration: line-through;
+    text-decoration:
+        line-through;
+
 }
 
 
-@media (max-width: 700px) {
+.task-number {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    min-width: 25px;
+
+}
+
+
+.phase-empty {
+
+    display: none;
+
+}
+
+
+@media (max-width: 800px) {
 
     .site-header {
-        padding-top: 40px;
 
         flex-direction: column;
+
+        padding-top: 45px;
+
     }
 
 
     h1 {
-        font-size: 36px;
+
+        font-size: 40px;
+
+    }
+
+
+    .dashboard-controls {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
     }
 
 
     .phase-header {
+
         flex-direction: column;
 
-        gap: 25px;
     }
 
-
-    .topic-title {
-        gap: 12px;
-    }
 
     .topic-id {
+
         display: none;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    main {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    .site-header {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .topic-header {
+
+        padding: 18px;
+
+    }
+
+
+    .topic-content {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
     }
 
 }
