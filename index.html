@@ -1,378 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>QA Automation Learning Roadmap</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <header class="site-header">
+
+<header class="site-header">
+
+    <div class="header-content">
+
+        <span class="eyebrow">
+            QA AUTOMATION
+        </span>
+
+        <h1>
+            Python & Automation
+            Learning Roadmap
+        </h1>
+
+        <p class="subtitle">
+            A structured path from manual QA
+            to automation testing.
+        </p>
+
+    </div>
+
+
+    <div class="overall-progress">
+
+        <span class="progress-label">
+            OVERALL PROGRESS
+        </span>
+
+        <strong id="overallProgress">
+            0%
+        </strong>
+
+        <div class="progress-bar">
+
+            <div
+                id="overallProgressBar"
+                class="progress-fill"
+            ></div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+    <section class="dashboard-controls">
+
         <div>
-            <span class="eyebrow">QA AUTOMATION</span>
 
-            <h1>Python & Automation Learning Roadmap</h1>
+            <span class="section-label">
+                ROADMAP
+            </span>
 
-            <p class="subtitle">
-                A step-by-step path from manual QA to automation testing.
-            </p>
+            <h2>
+                Learning progress
+            </h2>
+
         </div>
 
-        <div class="overall-progress">
-            <span>OVERALL PROGRESS</span>
 
-            <strong id="overallProgress">0%</strong>
+        <div class="filters">
 
-            <div class="progress-bar">
-                <div id="overallProgressBar"></div>
-            </div>
+            <button
+                class="filter-button active"
+                data-filter="all"
+            >
+                ALL
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="not-started"
+            >
+                NOT STARTED
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="in-progress"
+            >
+                IN PROGRESS
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="done"
+            >
+                DONE
+            </button>
+
         </div>
-    </header>
 
+    </section>
 
-    <main>
 
-        <!-- PHASE 1 -->
 
-        <section class="phase">
+    <div id="roadmap"></div>
 
-            <div class="phase-header">
 
-                <div>
-                    <span class="phase-label">PHASE 1</span>
+</main>
 
-                    <h2>Python Fundamentals</h2>
 
-                    <p class="phase-duration">
-                        Month 1
-                    </p>
-                </div>
 
-                <div class="phase-progress">
-                    <span>PROGRESS</span>
-                    <strong id="phase1Progress">0%</strong>
-                </div>
-
-            </div>
-
-
-            <!-- Topic 1 -->
-
-            <article class="topic">
-
-                <button class="topic-header">
-
-                    <div class="topic-title">
-
-                        <span class="topic-id">
-                            PY-01
-                        </span>
-
-                        <div>
-                            <h3>Python Basics</h3>
-
-                            <span class="status">
-                                NOT STARTED
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <span class="chevron">⌄</span>
-
-                </button>
-
-
-                <div class="topic-content">
-
-                    <div class="starting-point">
-
-                        <span class="section-label">
-                            STARTING POINT
-                        </span>
-
-                        <p>
-                            Build a solid Python foundation before moving
-                            into test automation.
-                        </p>
-
-                    </div>
-
-
-                    <div class="learning-section">
-
-                        <span class="section-label">
-                            STEPS TO LEARN
-                        </span>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-variables"
-                            >
-
-                            <span>
-                                Variables and basic data types
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-strings"
-                            >
-
-                            <span>
-                                Strings and string methods
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-operators"
-                            >
-
-                            <span>
-                                Operators and expressions
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-conditions"
-                            >
-
-                            <span>
-                                if / elif / else conditions
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-loops"
-                            >
-
-                            <span>
-                                for and while loops
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-functions"
-                            >
-
-                            <span>
-                                Functions and return values
-                            </span>
-                        </label>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- Topic 2 -->
-
-            <article class="topic">
-
-                <button class="topic-header">
-
-                    <div class="topic-title">
-
-                        <span class="topic-id">
-                            PY-02
-                        </span>
-
-                        <div>
-                            <h3>Python Collections</h3>
-
-                            <span class="status">
-                                NOT STARTED
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <span class="chevron">⌄</span>
-
-                </button>
-
-
-                <div class="topic-content">
-
-                    <div class="learning-section">
-
-                        <span class="section-label">
-                            STEPS TO LEARN
-                        </span>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-lists"
-                            >
-
-                            <span>
-                                Lists
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-tuples"
-                            >
-
-                            <span>
-                                Tuples
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-sets"
-                            >
-
-                            <span>
-                                Sets
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-dicts"
-                            >
-
-                            <span>
-                                Dictionaries
-                            </span>
-                        </label>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- Topic 3 -->
-
-            <article class="topic">
-
-                <button class="topic-header">
-
-                    <div class="topic-title">
-
-                        <span class="topic-id">
-                            PY-03
-                        </span>
-
-                        <div>
-                            <h3>Exceptions & Files</h3>
-
-                            <span class="status">
-                                NOT STARTED
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <span class="chevron">⌄</span>
-
-                </button>
-
-
-                <div class="topic-content">
-
-                    <div class="learning-section">
-
-                        <span class="section-label">
-                            STEPS TO LEARN
-                        </span>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-exceptions"
-                            >
-
-                            <span>
-                                try / except / finally
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-files"
-                            >
-
-                            <span>
-                                Reading and writing files
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-json"
-                            >
-
-                            <span>
-                                Working with JSON
-                            </span>
-                        </label>
-
-
-                        <label class="task">
-                            <input
-                                type="checkbox"
-                                data-task="py-imports"
-                            >
-
-                            <span>
-                                Modules and imports
-                            </span>
-                        </label>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </section>
-
-    </main>
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
