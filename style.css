@@ -14,37 +14,45 @@
    ========================================= */
 
 :root {
-    /* Main UI */
-    --background: #F8FAFC;
+
+    /* PAGE */
+    --background: #EEF2FF;
+
+    /* CARDS */
     --card: #FFFFFF;
+    --card-hover: #F8F7FF;
+    --card-expanded: #FAF9FF;
 
-    --text: #0F172A;
-    --muted: #64748B;
-    --border: #E2E8F0;
+    /* TEXT */
+    --text: #111827;
+    --muted: #667085;
 
-    /* Accent */
-    --accent: #6366F1;
-    --accent-hover: #4F46E5;
-    --accent-light: #EEF2FF;
+    /* BORDERS */
+    --border: #D8DDF0;
 
-    /* Not Started */
-    --not-started-bg: #F1F5F9;
-    --not-started-text: #64748B;
+    /* ACCENT */
+    --accent: #7C3AED;
+    --accent-hover: #6D28D9;
+    --accent-light: #F3E8FF;
 
-    /* In Progress */
-    --progress-bg: #FEF3C7;
-    --progress-text: #B45309;
+    /* NOT STARTED */
+    --not-started-bg: #EEF0F6;
+    --not-started-text: #667085;
 
-    /* Done */
+    /* IN PROGRESS */
+    --progress-bg: #FFF3D6;
+    --progress-text: #B76E00;
+
+    /* DONE */
     --done-bg: #DCFCE7;
     --done-text: #15803D;
 
-    /* Shadows */
+    /* SHADOWS */
     --shadow-small:
-        0 1px 2px rgba(15, 23, 42, 0.04);
+        0 2px 6px rgba(30, 41, 59, 0.04);
 
     --shadow-card:
-        0 8px 30px rgba(15, 23, 42, 0.06);
+        0 12px 32px rgba(124, 58, 237, 0.10);
 }
 
 
@@ -63,6 +71,7 @@ body {
         sans-serif;
 
     background: var(--background);
+
     color: var(--text);
 
     min-height: 100vh;
@@ -85,6 +94,7 @@ body {
     display: flex;
 
     justify-content: space-between;
+
     align-items: flex-start;
 
     gap: 70px;
@@ -96,7 +106,9 @@ body {
 }
 
 
-/* Small uppercase labels */
+/* =========================================
+   SMALL LABELS
+   ========================================= */
 
 .eyebrow,
 .section-label,
@@ -120,7 +132,9 @@ body {
 }
 
 
-/* Main heading */
+/* =========================================
+   MAIN TITLE
+   ========================================= */
 
 h1 {
     margin-top: 14px;
@@ -136,8 +150,6 @@ h1 {
     font-weight: 750;
 }
 
-
-/* Header subtitle */
 
 .subtitle {
     margin-top: 20px;
@@ -174,6 +186,8 @@ h1 {
 
     margin: 10px 0 12px;
 
+    color: var(--text);
+
     font-size: 34px;
 
     letter-spacing: -1px;
@@ -183,9 +197,9 @@ h1 {
 .progress-bar {
     width: 100%;
 
-    height: 6px;
+    height: 7px;
 
-    background: var(--border);
+    background: #D9DDF0;
 
     border-radius: 999px;
 
@@ -198,7 +212,12 @@ h1 {
 
     height: 100%;
 
-    background: var(--accent);
+    background:
+        linear-gradient(
+            90deg,
+            #6366F1,
+            #8B5CF6
+        );
 
     border-radius: 999px;
 
@@ -207,7 +226,7 @@ h1 {
 
 
 /* =========================================
-   MAIN CONTENT
+   MAIN
    ========================================= */
 
 main {
@@ -226,12 +245,16 @@ main {
 .dashboard-controls {
     padding: 30px 0;
 
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
 
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     gap: 30px;
@@ -270,11 +293,12 @@ main {
 .filter-button {
     padding: 10px 15px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid #D8DDF0;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    background: var(--card);
+    background: rgba(255, 255, 255, 0.72);
 
     color: var(--muted);
 
@@ -286,6 +310,8 @@ main {
 
     cursor: pointer;
 
+    backdrop-filter: blur(8px);
+
     transition:
         background 0.2s ease,
         border-color 0.2s ease,
@@ -296,9 +322,9 @@ main {
 
 
 .filter-button:hover {
-    background: var(--accent-light);
+    background: #F3E8FF;
 
-    border-color: #C7D2FE;
+    border-color: #C4B5FD;
 
     color: var(--accent);
 }
@@ -310,14 +336,19 @@ main {
 
 
 .filter-button.active {
-    background: var(--accent);
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #6366F1
+        );
 
-    border-color: var(--accent);
+    border-color: transparent;
 
     color: #FFFFFF;
 
     box-shadow:
-        0 4px 12px rgba(99, 102, 241, 0.20);
+        0 5px 16px rgba(124, 58, 237, 0.22);
 }
 
 
@@ -350,6 +381,8 @@ main {
 
 .phase-title {
     margin-top: 9px;
+
+    color: var(--text);
 
     font-size: 34px;
 
@@ -385,7 +418,9 @@ main {
 }
 
 
-/* Phase progress */
+/* =========================================
+   PHASE PROGRESS
+   ========================================= */
 
 .phase-progress {
     min-width: 140px;
@@ -399,9 +434,11 @@ main {
 
     margin-top: 8px;
 
-    color: var(--text);
+    color: var(--accent);
 
     font-size: 27px;
+
+    font-weight: 750;
 
     letter-spacing: -0.7px;
 }
@@ -412,11 +449,12 @@ main {
    ========================================= */
 
 .topic {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     background: var(--card);
 
@@ -432,9 +470,20 @@ main {
 
 
 .topic:hover {
-    border-color: #CBD5E1;
+    border-color: #A78BFA;
 
     box-shadow: var(--shadow-card);
+
+    transform: translateY(-1px);
+}
+
+
+.topic.open {
+    border-color: #C4B5FD;
+
+    box-shadow:
+        0 12px 35px
+        rgba(124, 58, 237, 0.08);
 }
 
 
@@ -450,11 +499,11 @@ main {
 .topic-header {
     width: 100%;
 
-    padding: 22px 25px;
+    padding: 23px 26px;
 
     border: none;
 
-    background: transparent;
+    background: var(--card);
 
     color: var(--text);
 
@@ -470,14 +519,24 @@ main {
 
     cursor: pointer;
 
-    transition: background 0.2s ease;
+    transition:
+        background 0.2s ease;
 }
 
 
 .topic-header:hover {
-    background: #FAFBFF;
+    background: var(--card-hover);
 }
 
+
+.topic.open .topic-header {
+    background: var(--card-expanded);
+}
+
+
+/* =========================================
+   TOPIC TITLE
+   ========================================= */
 
 .topic-title {
     display: flex;
@@ -493,11 +552,13 @@ main {
 
     padding-top: 4px;
 
-    color: var(--muted);
+    color: #8B8FA5;
 }
 
 
 .topic-name {
+    color: var(--text);
+
     font-size: 20px;
 
     font-weight: 700;
@@ -530,9 +591,9 @@ main {
 
     margin-top: 11px;
 
-    padding: 6px 10px;
+    padding: 7px 10px;
 
-    border-radius: 6px;
+    border-radius: 7px;
 
     font-size: 10px;
 
@@ -544,36 +605,45 @@ main {
 }
 
 
-/* Not Started */
+/* NOT STARTED */
 
 .status-not-started {
-    background: var(--not-started-bg);
+    background:
+        var(--not-started-bg);
 
-    color: var(--not-started-text);
+    color:
+        var(--not-started-text);
 
-    border: 1px solid #E2E8F0;
+    border:
+        1px solid #E0E3EC;
 }
 
 
-/* In Progress */
+/* IN PROGRESS */
 
 .status-in-progress {
-    background: var(--progress-bg);
+    background:
+        var(--progress-bg);
 
-    color: var(--progress-text);
+    color:
+        var(--progress-text);
 
-    border: 1px solid #FDE68A;
+    border:
+        1px solid #F9D98C;
 }
 
 
-/* Done */
+/* DONE */
 
 .status-done {
-    background: var(--done-bg);
+    background:
+        var(--done-bg);
 
-    color: var(--done-text);
+    color:
+        var(--done-text);
 
-    border: 1px solid #BBF7D0;
+    border:
+        1px solid #BBF7D0;
 }
 
 
@@ -584,25 +654,44 @@ main {
 .chevron {
     flex-shrink: 0;
 
-    color: var(--muted);
+    width: 34px;
 
-    font-size: 24px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    background: #F3F1FF;
+
+    color: #8B5CF6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
 
     line-height: 1;
 
     transition:
         transform 0.25s ease,
+        background 0.2s ease,
         color 0.2s ease;
 }
 
 
 .topic:hover .chevron {
+    background: #EDE9FE;
+
     color: var(--accent);
 }
 
 
 .topic.open .chevron {
     transform: rotate(180deg);
+
+    background: #EDE9FE;
 
     color: var(--accent);
 }
@@ -615,11 +704,16 @@ main {
 .topic-content {
     display: none;
 
-    padding: 0 25px 30px;
+    padding:
+        0
+        25px
+        30px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid #E9E7F4;
 
-    background: var(--card);
+    background:
+        var(--card-expanded);
 }
 
 
@@ -637,11 +731,17 @@ main {
 
     padding: 20px 22px;
 
-    border: 1px solid #E0E7FF;
+    border:
+        1px solid #DDD6FE;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
-    background: var(--accent-light);
+    background:
+        linear-gradient(
+            135deg,
+            #F3E8FF,
+            #EEF2FF
+        );
 }
 
 
@@ -653,7 +753,7 @@ main {
 .starting-point p {
     margin-top: 9px;
 
-    color: #475569;
+    color: #5B556D;
 
     font-size: 14px;
 
@@ -662,13 +762,19 @@ main {
 
 
 /* =========================================
-   TASKS
+   TASK SECTION
    ========================================= */
 
 .tasks-title {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+
+    color: #7C3AED;
 }
 
+
+/* =========================================
+   TASK ITEM
+   ========================================= */
 
 .task {
     display: flex;
@@ -677,9 +783,17 @@ main {
 
     gap: 12px;
 
-    padding: 14px 5px;
+    margin-bottom: 6px;
 
-    border-bottom: 1px solid #F1F5F9;
+    padding: 13px 14px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.60);
 
     cursor: pointer;
 
@@ -687,23 +801,28 @@ main {
 
     transition:
         background 0.15s ease,
-        padding-left 0.15s ease;
+        border-color 0.15s ease,
+        transform 0.15s ease;
 }
 
 
 .task:hover {
-    padding-left: 10px;
+    background: #F3F0FF;
 
-    background: #FAFBFF;
+    border-color: #E4DEFF;
+
+    transform: translateX(2px);
 }
 
 
 .task:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 
-/* Checkbox */
+/* =========================================
+   CHECKBOX
+   ========================================= */
 
 .task input {
     width: 18px;
@@ -720,14 +839,16 @@ main {
 }
 
 
-/* Task number */
+/* =========================================
+   TASK NUMBER
+   ========================================= */
 
 .task-number {
     min-width: 27px;
 
     padding-top: 1px;
 
-    color: #94A3B8;
+    color: #A0A4B8;
 
     font-size: 12px;
 
@@ -735,10 +856,12 @@ main {
 }
 
 
-/* Task text */
+/* =========================================
+   TASK TEXT
+   ========================================= */
 
 .task-text {
-    color: #334155;
+    color: #374151;
 
     font-size: 14px;
 
@@ -748,45 +871,57 @@ main {
 }
 
 
-/* Completed task */
+/* =========================================
+   COMPLETED TASK
+   ========================================= */
+
+.task.completed {
+    background:
+        rgba(220, 252, 231, 0.42);
+}
+
 
 .task.completed .task-number,
 .task.completed .task-text {
-    color: #94A3B8;
+    color: #9CA3AF;
 
     text-decoration: line-through;
 
-    opacity: 0.8;
+    opacity: 0.82;
 }
 
 
 /* =========================================
-   ACCESSIBILITY / FOCUS
+   FOCUS STATES
    ========================================= */
 
 .filter-button:focus-visible,
 .topic-header:focus-visible {
-    outline: 3px solid rgba(99, 102, 241, 0.25);
+    outline:
+        3px solid
+        rgba(124, 58, 237, 0.22);
 
     outline-offset: 2px;
 }
 
 
 .task input:focus-visible {
-    outline: 3px solid rgba(99, 102, 241, 0.25);
+    outline:
+        3px solid
+        rgba(124, 58, 237, 0.22);
 
     outline-offset: 2px;
 }
 
 
 /* =========================================
-   SELECTION
+   TEXT SELECTION
    ========================================= */
 
 ::selection {
-    background: #C7D2FE;
+    background: #DDD6FE;
 
-    color: var(--text);
+    color: #312E81;
 }
 
 
@@ -805,16 +940,18 @@ main {
 
 
 ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: #C4B5FD;
 
-    border: 3px solid var(--background);
+    border:
+        3px solid
+        var(--background);
 
     border-radius: 999px;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94A3B8;
+    background: #A78BFA;
 }
 
 
@@ -950,7 +1087,7 @@ main {
 
 
     .topic {
-        border-radius: 10px;
+        border-radius: 11px;
     }
 
 
@@ -966,6 +1103,15 @@ main {
 
     .topic-description {
         font-size: 13px;
+    }
+
+
+    .chevron {
+        width: 31px;
+
+        height: 31px;
+
+        font-size: 20px;
     }
 
 
@@ -988,13 +1134,13 @@ main {
         gap: 9px;
 
         padding:
-            13px
-            2px;
+            12px
+            10px;
     }
 
 
     .task:hover {
-        padding-left: 2px;
+        transform: none;
     }
 
 
